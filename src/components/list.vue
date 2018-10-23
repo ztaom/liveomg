@@ -3,7 +3,7 @@
         <ul class="videolist">
             <li v-for="(item, index) in videolist">
                 <div class="num">
-                    {{index + 1}}
+                    {{pageIndex * 20 + index + 1}}
                 </div>
                 <a :href="`https://www.liveme.com/${item.countryCode}/v/${item.vid}/index.html?from=liveomg.cn`" target="_blank">
                     <div class="pic" :style="{backgroundImage:`url(${item.videocapture})`}"></div>
@@ -21,14 +21,16 @@
     </div>
 </template>
 <script>
-
+import Util from '../common/utility.js';
+const param = process.browser ? Object.assign({}, Util.getQueryData(window.location.search), window.liveomg_GLOBAL_ENVIRONMENT.param) : {};
 export default {
     name: 'home',
     data: function () {
         return {
             videolist: [],
             blankLi: 20,
-            isShowBlank: true
+            isShowBlank: true,
+            pageIndex: param.page || 0
         }
     },
     props: {
