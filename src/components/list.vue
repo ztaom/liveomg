@@ -5,16 +5,16 @@
                 <div class="num">
                     {{index + 1}}
                 </div>
-                <a :href="`https://www.liveomg.com/${item.countryCode}/v/${item.vid}/index.html?from=liveomg.cn`" target="_blank">
+                <a :href="`https://www.liveme.com/${item.countryCode}/v/${item.vid}/index.html?from=liveomg.cn`" target="_blank">
                     <div class="pic" :style="{backgroundImage:`url(${item.videocapture})`}"></div>
                 </a>
                 <div class="text">
-                    <a :href="`https://www.liveomg.com/${item.countryCode}/v/${item.vid}/index.html?from=liveomg.cn`" target="_blank">
+                    <a :href="`https://www.liveme.com/${item.countryCode}/v/${item.vid}/index.html?from=liveomg.cn`" target="_blank">
                         <h3>{{item.uname}}</h3>
                     </a>
                     <p>观看人数：{{item.watchnumber}}</p>
                     <p>直播时间：{{timetrans(item.vtime)}}</p>
-                    <p>来源：liveomg.com</p>
+                    <p>来源：liveme.com</p>
                 </div>
             </li>
         </ul>
