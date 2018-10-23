@@ -1,0 +1,81 @@
+<template>
+    <div class="nav">
+        <ul>
+            <li class="prev" @click="clickPrev">上一页</li>
+            <li class="next" @click="clickNext">下一页</li>
+            <li class="country" @click="toggleHand">
+                <div class="hd">
+                    直播国家<span></span>
+                </div>
+                <div class="bd" v-show="toggle">
+                    <a href="javascript:" v-for="item in country" @click="selectCountry(item)">{{item}}</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</template>
+<script>
+import Util from '../common/utility.js';
+const param = process.browser ? Object.assign({}, Util.getQueryData(window.location.search), window.LIVEME_GLOBAL_ENVIRONMENT.param) : {};
+let lang = process.browser ? window.navigator.language : 'US';
+lang = lang.split('-')[1];
+export default {
+    name: 'omgnav',
+    data: function () {
+        return {
+            pageIndex: param.page || 0,
+            country: ['中国', '美区', '日本'],
+            toggle: false
+        }
+    },
+    watch: {
+    },
+    computed: {
+    },
+    methods: {
+        clickPrev() {
+            this.pageIndex--;
+            if(param.countryCode) {
+                lang = param.countryCode;
+            }
+            if(this.pageIndex > 0){
+                window.location.href = `/${lang.toLowerCase()}/${this.pageIndex}`;
+            } else {
+                window.location.href = `/`;
+            }
+        },
+        clickNext() {
+            this.pageIndex++;
+            if(param.countryCode) {
+                lang = param.countryCode;
+            }
+            window.location.href = `/${lang.toLowerCase()}/${this.pageIndex}`;
+        },
+        selectCountry(item) {
+            switch (item) {
+                case '中国':
+                    window.location.href = `/cn/`;
+                    break;
+                case '美区':
+                    window.location.href = `/us/`;
+                    break;
+                case '日本':
+                    window.location.href = `/jp/`;
+                    break;
+                default:
+            }
+            this.now = 0
+        },
+        toggleHand() {
+            this.toggle = !this.toggle;
+        }
+
+    },
+    created: function () {
+    },
+    mounted: function () {
+    }
+}
+</script>
+<style lang="less" scoped>
+</style>
