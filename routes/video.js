@@ -69,7 +69,7 @@ function videoRouter(app) {
     const { countryCode, personalId, videoid } = req.params;
 
     const context = {
-      title: 'liveme',
+      title: 'liveomg',
       url: req.url
     }
 

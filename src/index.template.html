@@ -35,53 +35,24 @@
     }(window);
     </script>
     <script>
-        window.LIVEME_GLOBAL_ENVIRONMENT = window.LIVE_GLOBAL_ENVIRONMENT || {};
-        window.LIVEME_GLOBAL_ENVIRONMENT.browser = true;
-        window.LIVEME_GLOBAL_ENVIRONMENT.param = '{{{param}}}';
-        if (window.LIVEME_GLOBAL_ENVIRONMENT.param){
-            window.LIVEME_GLOBAL_ENVIRONMENT.param = JSON.parse(window.LIVEME_GLOBAL_ENVIRONMENT.param);
+        window.liveomg_GLOBAL_ENVIRONMENT = window.LIVE_GLOBAL_ENVIRONMENT || {};
+        window.liveomg_GLOBAL_ENVIRONMENT.browser = true;
+        window.liveomg_GLOBAL_ENVIRONMENT.param = '{{{param}}}';
+        if (window.liveomg_GLOBAL_ENVIRONMENT.param){
+            window.liveomg_GLOBAL_ENVIRONMENT.param = JSON.parse(window.liveomg_GLOBAL_ENVIRONMENT.param);
         }
-        window.LIVEME_GLOBAL_ENVIRONMENT.baseUrl = '{{baseUrl}}';
-        window.LIVEME_GLOBAL_ENVIRONMENT.imcKey = '{{imcKey}}';
-        window.LIVEME_GLOBAL_ENVIRONMENT.msgcent = '{{msgcent}}';
-        window.LIVEME_GLOBAL_ENVIRONMENT.weblogin = '{{weblogin}}';
-        window.LIVEME_GLOBAL_ENVIRONMENT.cmsAPI = '{{cmsAPI}}';
-
+        window.liveomg_GLOBAL_ENVIRONMENT.baseUrl = '{{baseUrl}}';
+        window.liveomg_GLOBAL_ENVIRONMENT.imcKey = '{{imcKey}}';
+        window.liveomg_GLOBAL_ENVIRONMENT.msgcent = '{{msgcent}}';
+        window.liveomg_GLOBAL_ENVIRONMENT.weblogin = '{{weblogin}}';
+        window.liveomg_GLOBAL_ENVIRONMENT.cmsAPI = '{{cmsAPI}}';
     </script>
-    <!-- Facebook Pixel Code -->
-    <noscript>
-     <img height="1" width="1"
-    src="https://www.facebook.com/tr?id=541606286207197&ev=PageView
-    &noscript=1"/>
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-
-    <script src="https://www.liveme.com/js/lib/bj-report-tryjs.min.js"></script>
-    <script>
-        //初始化
-        var ismobile = /AppleWebKit.*Mobile.*/i.test(navigator.userAgent);
-        BJ_REPORT.init({
-            id: ismobile ? 4 : 3, //WEB PC
-            url: '//140.143.123.72:3000/badjs'
-        });
-    </script>
-    <!--[if lte IE 6]>
-    <script type="text/javascript" src="/js/public/belatedPNG.js"></script>
-    <script type="text/javascript">
-      var __IE6=true;
-      DD_belatedPNG.fix('.logo,.welcome,.title');
-    </script>
-    <![endif]-->
 </head>
 
 <body ontouchstart="" class="bodywrap">
     <div id="app">
       <!--vue-ssr-outlet-->
     </div>
-
-    <script type="text/javascript" src="//www.liveme.com/js/client/kewl.js"></script>
-    <script type="text/javascript" src="//www.liveme.com/js/public/zepto.min.js"></script>
-
     <!-- built files will be auto injected -->
 </body>
 

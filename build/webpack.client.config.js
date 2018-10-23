@@ -41,7 +41,7 @@ const config = merge(base, {
 //   config.plugins.push(
 //     // auto generate service worker
 //     new SWPrecachePlugin({
-//       cacheId: 'nodeliveme',
+//       cacheId: 'nodeliveomg',
 //       filename: 'service-worker.js',
 //       minify: true,
 //       dontCacheBustUrlsMatching: /./,

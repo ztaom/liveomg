@@ -16,7 +16,7 @@
 </template>
 <script>
 import Util from '../common/utility.js';
-const param = process.browser ? Object.assign({}, Util.getQueryData(window.location.search), window.LIVEME_GLOBAL_ENVIRONMENT.param) : {};
+const param = process.browser ? Object.assign({}, Util.getQueryData(window.location.search), window.liveomg_GLOBAL_ENVIRONMENT.param) : {};
 let lang = process.browser ? window.navigator.language : 'US';
 lang = lang.split('-')[1];
 export default {

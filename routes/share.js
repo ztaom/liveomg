@@ -8,7 +8,7 @@ const router = express.Router();
 const axios = require('axios');
 const _ = require('lodash');
 console.log('执行地址: ', process.cwd())
-const Config_liveme = require(`${process.cwd()}/config/config`).liveme;
+const Config_liveomg = require(`${process.cwd()}/config/config`).liveomg;
 const utils = require(`${process.cwd()}/utils/util`);
 
 
@@ -42,18 +42,18 @@ var share = {
         console.log('paramsStr', paramsStr);
 
         let dataRes = {
-            title: Config_liveme.quizbizTitle,
-            description: Config_liveme.quizbizDescription,
-            shareImg: Config_liveme.quizbizImg,
-            shareTo: Config_liveme.quizbizTo,
+            title: Config_liveomg.quizbizTitle,
+            description: Config_liveomg.quizbizDescription,
+            shareImg: Config_liveomg.quizbizImg,
+            shareTo: Config_liveomg.quizbizTo,
             currentUrl: req.protocol + '://' + req.get('host') + req.url
         };
 
         // 性能比
         console.log('ajax消耗时间', Date.now() - conTime);
         axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8;';
-        axios.defaults.baseURL = utils.livemeApiHost(req);
-        let apiUrl = utils.livemeApiHost(req) + '/liveGameTrivia/h5share';
+        axios.defaults.baseURL = utils.liveomgApiHost(req);
+        let apiUrl = utils.liveomgApiHost(req) + '/liveGameTrivia/h5share';
         console.log('请求的api地址: ', apiUrl);
 
         let apiPara = {
@@ -84,7 +84,7 @@ var share = {
                 };
 
 
-                // 1 不需要是因为后端加了&short_id=xxx,2,3需要是因为没加，当时跟后端对，后端说直接用，具体用法问你老大，都是你们对的，没说type不同，url参数不同，只给了"url":"http://qa.www.liveme.com/media/livequest/dist/?uid=940590828789694464&short_id=QB16574732"当时注意到code跟这里相等，就没多想多问
+                // 1 不需要是因为后端加了&short_id=xxx,2,3需要是因为没加，当时跟后端对，后端说直接用，具体用法问你老大，都是你们对的，没说type不同，url参数不同，只给了"url":"http://qa.www.liveomg.com/media/livequest/dist/?uid=940590828789694464&short_id=QB16574732"当时注意到code跟这里相等，就没多想多问
                 if (paramsData.type == 1) {
                     dataGet.shareTo += dataGet.shareTo.match(/\?/) ? `${paramsStr}` : `?${paramsStr.replace(/\&/, '')}`
                 }

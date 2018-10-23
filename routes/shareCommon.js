@@ -8,7 +8,7 @@ const router = express.Router();
 const axios = require('axios');
 const _ = require('lodash');
 console.log('执行地址: ', process.cwd())
-const Config_liveme = require(`${process.cwd()}/config/config`).liveme;
+const Config_liveomg = require(`${process.cwd()}/config/config`).liveomg;
 const utils = require(`${process.cwd()}/utils/util`);
 
 
@@ -43,10 +43,10 @@ var share = {
         console.log('paramsStr', paramsStr);
 
         // let dataRes = {
-        //     title: Config_liveme.quizbizTitle,
-        //     description: Config_liveme.quizbizDescription,
-        //     shareImg: Config_liveme.quizbizImg,
-        //     shareTo: Config_liveme.shareTo,
+        //     title: Config_liveomg.quizbizTitle,
+        //     description: Config_liveomg.quizbizDescription,
+        //     shareImg: Config_liveomg.quizbizImg,
+        //     shareTo: Config_liveomg.shareTo,
         //     currentUrl: req.protocol + '://' + req.get('host') + req.url
         // };
 
@@ -54,9 +54,9 @@ var share = {
         console.log('ajax消耗时间', Date.now() - conTime);
 
         axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8;';
-        axios.defaults.baseURL = utils.livemeApiHost(req);
+        axios.defaults.baseURL = utils.liveomgApiHost(req);
 
-        let apiUrl = utils.livemeApiHost(req) + '/share/info';
+        let apiUrl = utils.liveomgApiHost(req) + '/share/info';
 
         console.log('请求的api地址: ', apiUrl);
 
@@ -101,7 +101,7 @@ var share = {
                     let ardlink = encodeURIComponent(dataGet.ardink),
                         ioslink = encodeURIComponent(dataGet.ioslink);
 
-                    dataGet.shareTo = Config_liveme.shareTo + `?ardink=${ardlink}&ioslink=${ioslink}`;
+                    dataGet.shareTo = Config_liveomg.shareTo + `?ardink=${ardlink}&ioslink=${ioslink}`;
                 }
 
             }

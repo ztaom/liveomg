@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 
-const baseUrl  = process.browser ? window.LIVEME_GLOBAL_ENVIRONMENT.baseUrl : process.baseUrl;
+const baseUrl  = process.browser ? window.liveomg_GLOBAL_ENVIRONMENT.baseUrl : process.baseUrl;
 
 const ax = {
   get(url, param) {

@@ -10,7 +10,7 @@
 <script>
 import videoStoreModule from '../store/video'
 import Util from '../common/utility.js';
-const param = process.browser ? Object.assign({}, Util.getQueryData(window.location.search), window.LIVEME_GLOBAL_ENVIRONMENT.param) : {};
+const param = process.browser ? Object.assign({}, Util.getQueryData(window.location.search), window.liveomg_GLOBAL_ENVIRONMENT.param) : {};
 export default {
     name: 'home',
 	asyncData: function ({params, query, store, tagName}) {

@@ -1,7 +1,7 @@
 {
-  "name": "nodeliveme",
+  "name": "nodeliveomg",
   "version": "1.0.0",
-  "description": "nodeliveme",
+  "description": "nodeliveomg",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",

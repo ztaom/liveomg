@@ -3,16 +3,16 @@
 *
 * */
 
-const Config_liveme = require(process.cwd() + '/config/config').liveme;
+const Config_liveomg = require(process.cwd() + '/config/config').liveomg;
 
 module.exports = {
 
     /*
     * desc: 请求接口地址
     * */
-    livemeApiHost: function (req) {
+    liveomgApiHost: function (req) {
 
-        let apiHost = Config_liveme.baseURL;
+        let apiHost = Config_liveomg.baseURL;
         let paramsData = req.query || {};
 
         if (paramsData.host) {
@@ -22,7 +22,7 @@ module.exports = {
         }
         else {
 
-            if (!req.get('host').match(/^m\.liveme\.com/)) {
+            if (!req.get('host').match(/^m\.liveomg\.com/)) {
                 apiHost = `http://featuremix-qa.live.ksmobile.net`
             }
         }

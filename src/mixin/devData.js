@@ -26,13 +26,13 @@ export default {
             this.$ssrContext.title = `${desc} ${title}`;
             this.$ssrContext.description = `${desc} ${description}`;
             this.$ssrContext.keywords = keywords;
-            this.$ssrContext.mataImage = asyncData.mataImage || 'https://www.liveme.com/assets/images/share.jpg';
+            this.$ssrContext.mataImage = asyncData.mataImage || 'https://www.liveomg.com/assets/images/share.jpg';
         } else {
 
             this.$ssrContext.title = title;
             this.$ssrContext.description = description;
             this.$ssrContext.keywords = keywords;
-            this.$ssrContext.mataImage = 'https://www.liveme.com/assets/images/share.jpg';
+            this.$ssrContext.mataImage = 'https://www.liveomg.com/assets/images/share.jpg';
         }
 
         this.$ssrContext.param = urlParam ? JSON.stringify(urlParam) : '';

@@ -4,7 +4,7 @@ Vue.use(VueI18n);
 
 import zh from './zh.json';
 
-const param = process.browser ? window.LIVEME_GLOBAL_ENVIRONMENT.param : {};
+const param = process.browser ? window.liveomg_GLOBAL_ENVIRONMENT.param : {};
 const messages = {
     zh: {lang: zh}, // 中文
 };
