@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "pm2": "sudo pm2 start ./bin/www --name 'm.liveme.com'",
-    "max": "sudo pm2 start ./bin/www -i max --name 'm.liveme.com'",
+    "pm2": "sudo pm2 start ./bin/www --name 'liveomg.cn'",
+    "max": "sudo pm2 start ./bin/www -i max --name 'liveomg.cn'",
     "nodemon": "sudo nodemon --exec 'npm run prod'",
     "development": "NODE_ENV=production node ./bin/www",
     "dev": "cross-env PORT=3000 NODE_ENV=development nodemon start",
