@@ -11,7 +11,7 @@ em{font-style:normal; font-weight: bold;}
 h1, h2, h3, h4, h5, h6{font-weight: normal;}
 a{text-decoration: none;}
 a:link,a:visited{color: #333;}
-a:hover{color: #1FBF8F}
+a:hover{color: #1FBF8F} // rgba(31, 191, 143, 1)
 
 article,aside,footer,header,nav,section{display:block;}
 
@@ -48,7 +48,7 @@ textarea::-webkit-input-placeholder{
 .videolist{
     display: flex; width: 100%;flex-wrap: wrap;
     li{
-        width: 18%; min-width: 150px; margin:0 1% 20px; overflow: hidden;
+        width: 18%; min-width: 140px; margin:0 1% 20px; overflow: hidden;
         .num{margin-bottom: 13px; color: #686f74; font-size: 30px; opacity: 0.3; text-align: center;}
         .pic{width: 100%; height: 180px; background-repeat: no-repeat; background-size: cover; background-position: center center; border-radius: 6px;}
         .text{
@@ -66,7 +66,7 @@ textarea::-webkit-input-placeholder{
     p{text-align: center; color: #666}
 }
 .nav{
-    position: fixed; right: 0; z-index: 100; width: 110px; top:150px; text-align: center;
+    position: fixed; right: 0; z-index: 100; width: 110px; top:150px; text-align: center;background:#fff;
     li{margin-bottom: 30px; cursor: pointer;}
     .prev, .next, .country{
         border: 1px solid #ccc; width: 80px; margin:0 auto 30px; padding: 4px 0; border-radius:8px;color: #666;
@@ -74,13 +74,30 @@ textarea::-webkit-input-placeholder{
     }
     .next{}
     .country{
+        position: relative;
         span{border-bottom: 1px solid #333; border-left: 1px solid #333; transform: rotate(-45deg);display: inline-block; width: 6px; height: 6px; vertical-align:text-top; margin-top: 3px; margin-left: 4px}
         .hd{}
         .bd{
-            padding-top: 5px;
+            padding-top: 5px; position: absolute; left: 0; top:28px; border: 1px solid #666; background:#fff; width: 100%;border-radius:8px;
             a{padding:2px 0; display: block;}
         }
     }
 }
 .adsa{width:99%; height: 100px;}
-.footer{text-align: center; padding: 30px 0;}
+.footer{text-align: center; padding: 30px 0; color: #666;}
+
+@media (max-width:750px) {
+    .videolistwrap{
+        padding:0 10px;
+        .videolist{
+            li{width:48%;}
+        }
+    }
+    .nav{
+        position: static; width: 100%;
+        ul{
+            display: flex; justify-content: center;
+            li{margin: 0 5px!important;}
+        }
+    }
+}
