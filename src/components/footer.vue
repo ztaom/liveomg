@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        liveomg.cn
+        <span>为liveomg.cn提供数据，联系方式：382691226@qq.com</span>
     </div>
 </template>
 <script>

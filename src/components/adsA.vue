@@ -1,5 +1,5 @@
 <template>
-    <div class="adsa">
+    <div class="adsa" style="display:none">
 
     </div>
 </template>
