@@ -57,13 +57,13 @@ export default {
             if(param.game == 'game') {
                 switch (item) {
                     case '中国':
-                        window.location.href = `/game/cn/`;
+                        window.location.href = `/game/cn/1`;
                         break;
                     case '美区':
-                        window.location.href = `/game/us/`;
+                        window.location.href = `/game/us/1`;
                         break;
                     case '日本':
-                        window.location.href = `/game/jp/`;
+                        window.location.href = `/game/jp/1`;
                         break;
                     default:
                 }
