@@ -11,10 +11,13 @@ const Services = {
         }, param))
     },
 
-    // tags标签
-    getTags(param) {
-        return axios.get('/search/getTags', param)
-    }
+    // 游戏https://live.ksmobile.net/game/gVideoList?page_index=1&gtype=0&page_size=20&countryCode=US
+    getGameList(param) {
+        return axios.get('/game/gVideoList', Object.assign({
+            h5: 1,
+            gtype: 0
+        }, param))
+    },
 }
 
 export default Services

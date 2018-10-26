@@ -30,7 +30,7 @@ export default {
             videolist: [],
             blankLi: 20,
             isShowBlank: true,
-            pageIndex: param.page || 0
+            pageIndex: 0
         }
     },
     props: {
@@ -66,6 +66,12 @@ export default {
     created: function () {
         const self = this;
         self.getVideoData();
+        if(!Number(param.pageIndex)) {
+            self.pageIndex = 0;
+        } else {
+            self.pageIndex = param.pageIndex;
+        }
+        console.log(param)
     },
     mounted: function () {
     }

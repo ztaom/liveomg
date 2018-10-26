@@ -61,15 +61,16 @@ textarea::-webkit-input-placeholder{
 }
 .header{
     padding: 30px;
-    h1{ text-align: center;}
-    a{color: #1FBF8F; font-size: 40px; font-weight: bold;}
+    h1{ text-align: center;
+        a{color: #1FBF8F; font-size: 40px; font-weight: bold;}
+    }
     p{text-align: center; color: #666}
 }
-.nav{
-    position: fixed; right: 0; z-index: 100; width: 110px; top:150px; text-align: center;background:#fff;
+.pagenav{
+    position: fixed; right: 0; z-index: 100; width: 110px; top:150px; text-align: center;
     li{margin-bottom: 30px; cursor: pointer;}
     .prev, .next, .country{
-        border: 1px solid #ccc; width: 80px; margin:0 auto 30px; padding: 4px 0; border-radius:8px;color: #666;
+        border: 1px solid #ccc; width: 80px; margin:0 auto 30px; padding: 4px 0; border-radius:8px;color: #666;background:#fff;
         &:hover{border-color: #666}
     }
     .next{}
@@ -83,6 +84,14 @@ textarea::-webkit-input-placeholder{
         }
     }
 }
+.nav{
+    text-align: center; padding:50px 0 20px;
+    li{
+        display: inline-block; margin: 0 10px;
+        a{background:rgba(31, 191, 143, 0.5); padding:6px 30px; border-radius: 6px;}
+        a:hover, .current{background:rgba(31, 191, 143, 1); color: #fff}
+    }
+}
 .adsa{width:99%; height: 100px;}
 .footer{text-align: center; padding: 30px 0; color: #666;}
 
@@ -93,7 +102,7 @@ textarea::-webkit-input-placeholder{
             li{width:48%;}
         }
     }
-    .nav{
+    .pagenav{
         position: static; width: 100%;
         ul{
             display: flex; justify-content: center;

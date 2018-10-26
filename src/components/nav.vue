@@ -1,5 +1,5 @@
 <template>
-    <div class="nav">
+    <div class="pagenav">
         <ul>
             <li class="prev" @click="clickPrev">上一页</li>
             <li class="next" @click="clickNext">下一页</li>
@@ -23,7 +23,7 @@ export default {
     name: 'omgnav',
     data: function () {
         return {
-            pageIndex: param.page || 0,
+            pageIndex: param.pageIndex || 0,
             country: ['中国', '美区', '日本'],
             toggle: false
         }
@@ -38,10 +38,11 @@ export default {
             if(param.countryCode) {
                 lang = param.countryCode;
             }
+
             if(this.pageIndex > 0){
-                window.location.href = `/${lang.toLowerCase()}/${this.pageIndex}`;
+                window.location.href = (param.game == 'game') ? `/game/${lang.toLowerCase()}/${this.pageIndex}` : `/${lang.toLowerCase()}/${this.pageIndex}`;
             } else {
-                window.location.href = `/`;
+                window.location.href = (param.game == 'game') ? `/game/${lang.toLowerCase()}/1` : `/`;
             }
         },
         clickNext() {
@@ -49,20 +50,36 @@ export default {
             if(param.countryCode) {
                 lang = param.countryCode;
             }
-            window.location.href = `/${lang.toLowerCase()}/${this.pageIndex}`;
+
+            window.location.href = (param.game == 'game') ? `/game/${lang.toLowerCase()}/${this.pageIndex}` : `/${lang.toLowerCase()}/${this.pageIndex}`;
         },
         selectCountry(item) {
-            switch (item) {
-                case '中国':
-                    window.location.href = `/cn/`;
-                    break;
-                case '美区':
-                    window.location.href = `/us/`;
-                    break;
-                case '日本':
-                    window.location.href = `/jp/`;
-                    break;
-                default:
+            if(param.game == 'game') {
+                switch (item) {
+                    case '中国':
+                        window.location.href = `/game/cn/`;
+                        break;
+                    case '美区':
+                        window.location.href = `/game/us/`;
+                        break;
+                    case '日本':
+                        window.location.href = `/game/jp/`;
+                        break;
+                    default:
+                }
+            } else {
+                switch (item) {
+                    case '中国':
+                        window.location.href = `/cn/`;
+                        break;
+                    case '美区':
+                        window.location.href = `/us/`;
+                        break;
+                    case '日本':
+                        window.location.href = `/jp/`;
+                        break;
+                    default:
+                }
             }
             this.now = 0
         },
