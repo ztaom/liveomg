@@ -18,6 +18,13 @@
     <meta name="twitter:image:src" content="{{mataImage}}">
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     <script>
+    // 当前域名是xiujuan.wang则跳转
+    var hostName = location.host;
+    if(hostName === 'xiujuan.wang' || hostName === 'www.xiujuan.wang') {
+        window.location.href = '/wangxiujuan.html';
+    }
+    </script>
+    <script>
     ! function(e) {
         function t(e, t, n, i) {
             "function" != typeof n && alert("please pass a callback function!"), i = i || !1, document.addEventListener ? e.addEventListener(t, n, i) : e.attachEvent("on" + t, n)
@@ -55,7 +62,7 @@
       <!--vue-ssr-outlet-->
     </div>
     <!-- built files will be auto injected -->
-    
+
 </body>
 
 </html>
